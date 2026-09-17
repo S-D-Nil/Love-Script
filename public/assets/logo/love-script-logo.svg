@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" width="280" height="70">
+  <defs>
+    <linearGradient id="logo-heart-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+    <filter id="logo-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#f43f5e" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Heart Icon with Feather Nib Accent -->
+  <g transform="translate(10, 10)" filter="url(#logo-glow)">
+    <!-- Heart Base -->
+    <path d="M 25 15 C 25 5, 12 -2, 3 8 C -6 -2, -19 5, -19 15 C -19 32, 3 45, 3 52 C 3 45, 25 32, 25 15 Z" fill="url(#logo-heart-grad)" transform="translate(24, 0) scale(0.9)"/>
+    <!-- Nib slit -->
+    <path d="M 27 20 L 27 34" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="27" cy="20" r="1.5" fill="#ffffff"/>
+    <!-- Sparkle -->
+    <path d="M 45 6 L 47 11 L 52 13 L 47 15 L 45 20 L 43 15 L 38 13 L 43 11 Z" fill="#fbcfe8"/>
+  </g>
+
+  <!-- Logo Text -->
+  <g transform="translate(68, 44)">
+    <text x="0" y="0" font-family="'Playfair Display', serif" font-weight="800" font-size="28" fill="currentColor" letter-spacing="-0.5">Love</text>
+    <text x="68" y="0" font-family="'Playfair Display', serif" font-weight="700" font-style="italic" font-size="28" fill="#e11d48" letter-spacing="-0.5">Script</text>
+    <!-- Romantic dot -->
+    <circle cx="152" cy="-4" r="3.5" fill="#f43f5e"/>
+  </g>
+</svg>

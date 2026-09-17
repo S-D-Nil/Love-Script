@@ -1,0 +1,6 @@
+{
+  "name": "Love Script — Romantic Customized Web Projects",
+  "description": "Love Script creates beautiful customized romantic websites for birthdays, love stories, proposals, anniversaries, and special digital moments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Grid Pattern inspired by user's screenshot -->
+    <pattern id="grid-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#fecdd3" stroke-width="1" stroke-opacity="0.55"/>
+    </pattern>
+    <linearGradient id="pink-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="50%" stop-color="#ffe4e6"/>
+      <stop offset="100%" stop-color="#fecdd3"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#f43f5e" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- Background with grid -->
+  <rect width="800" height="500" fill="url(#pink-grad)"/>
+  <rect width="800" height="500" fill="url(#grid-pattern)"/>
+
+  <!-- Garland / Bunting Flags Top Left -->
+  <path d="M -10 30 Q 120 70 240 30" fill="none" stroke="#fb7185" stroke-width="2.5" stroke-dasharray="2,2"/>
+  <polygon points="20,40 50,44 35,90" fill="#f43f5e"/>
+  <polygon points="60,46 90,50 75,98" fill="#fda4af"/>
+  <polygon points="100,51 130,52 115,102" fill="#fb7185"/>
+  <polygon points="140,52 170,49 155,98" fill="#f43f5e"/>
+  <polygon points="180,48 210,42 195,88" fill="#fda4af"/>
+
+  <!-- Garland / Bunting Flags Top Right -->
+  <path d="M 560 30 Q 680 70 810 30" fill="none" stroke="#fb7185" stroke-width="2.5" stroke-dasharray="2,2"/>
+  <polygon points="590,42 620,48 605,90" fill="#fda4af"/>
+  <polygon points="630,50 660,52 645,98" fill="#f43f5e"/>
+  <polygon points="670,52 700,50 685,102" fill="#fb7185"/>
+  <polygon points="710,48 740,44 725,94" fill="#fda4af"/>
+  <polygon points="750,42 780,36 765,82" fill="#f43f5e"/>
+
+  <!-- Floating Hearts and Confetti -->
+  <g fill="#f43f5e" opacity="0.65">
+    <path d="M 120 180 C 120 170, 105 160, 95 175 C 85 160, 70 170, 70 180 C 70 200, 95 215, 95 225 C 95 215, 120 200, 120 180 Z" transform="scale(0.5) translate(140, 120)"/>
+    <path d="M 120 180 C 120 170, 105 160, 95 175 C 85 160, 70 170, 70 180 C 70 200, 95 215, 95 225 C 95 215, 120 200, 120 180 Z" transform="scale(0.4) translate(400, 30)"/>
+    <path d="M 120 180 C 120 170, 105 160, 95 175 C 85 160, 70 170, 70 180 C 70 200, 95 215, 95 225 C 95 215, 120 200, 120 180 Z" transform="scale(0.6) translate(1000, 240)"/>
+    <circle cx="160" cy="140" r="3" fill="#fb7185"/>
+    <circle cx="280" cy="100" r="4" fill="#f43f5e"/>
+    <circle cx="430" cy="80" r="3" fill="#fda4af"/>
+    <circle cx="460" cy="200" r="4" fill="#fb7185"/>
+    <circle cx="700" cy="160" r="3.5" fill="#f43f5e"/>
+    <circle cx="220" cy="400" r="3" fill="#f43f5e"/>
+  </g>
+
+  <!-- Left Side: Happy Birthday Typography & Pill -->
+  <g transform="translate(60, 120)">
+    <!-- Party Hat on the text -->
+    <g transform="translate(240, 2) rotate(15)">
+      <polygon points="20,0 0,55 42,50" fill="#f43f5e"/>
+      <circle cx="20" cy="0" r="6" fill="#1e293b"/>
+      <circle cx="14" cy="22" r="3" fill="#fff"/>
+      <circle cx="28" cy="32" r="3" fill="#fff"/>
+      <circle cx="10" cy="42" r="3" fill="#fff"/>
+    </g>
+
+    <!-- Main Happy Text with bubble 3D effect -->
+    <text x="10" y="80" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="64" fill="#1e293b" stroke="#ffffff" stroke-width="8" paint-order="stroke fill">Happy</text>
+    <text x="10" y="80" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="64" fill="#1e293b">Happy</text>
+
+    <!-- Birthday Text -->
+    <text x="10" y="160" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="70" fill="#f43f5e" stroke="#1e293b" stroke-width="8" paint-order="stroke fill">Birthday</text>
+    <text x="10" y="160" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="70" fill="#fb7185">Birthday</text>
+
+    <!-- Date Capsule Pill -->
+    <g transform="translate(10, 195)">
+      <rect x="0" y="0" width="230" height="42" rx="21" fill="#f43f5e" filter="url(#shadow)"/>
+      <text x="24" y="27" font-size="14" fill="#ffffff">★</text>
+      <text x="115" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" fill="#ffffff" text-anchor="middle">23 May 2005</text>
+      <text x="206" y="27" font-size="14" fill="#ffffff">★</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Circular Cute Bear Character (Exact inspiration from user's image) -->
+  <g transform="translate(480, 80)">
+    <!-- Balloons floating behind -->
+    <g>
+      <!-- Pink balloon left -->
+      <path d="M 20 60 Q 30 140 60 170" fill="none" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="15" cy="50" rx="35" ry="44" fill="#fb7185"/>
+      <ellipse cx="6" cy="38" rx="8" ry="14" fill="#ffffff" opacity="0.6"/>
+
+      <!-- Pink balloon right -->
+      <path d="M 270 220 Q 250 280 220 310" fill="none" stroke="#1e293b" stroke-width="2"/>
+      <ellipse cx="275" cy="210" rx="32" ry="40" fill="#f43f5e"/>
+      <ellipse cx="268" cy="198" rx="7" ry="12" fill="#ffffff" opacity="0.6"/>
+    </g>
+
+    <!-- Outer Frame Circle -->
+    <circle cx="125" cy="155" r="125" fill="#ffffff" stroke="#1e293b" stroke-width="4" filter="url(#shadow)"/>
+
+    <!-- Cute Bear Drawing -->
+    <g transform="translate(60, 75)">
+      <!-- Left Ear -->
+      <ellipse cx="25" cy="25" rx="20" ry="20" fill="#64748b"/>
+      <ellipse cx="25" cy="25" rx="11" ry="11" fill="#cbd5e1"/>
+      <!-- Right Ear -->
+      <ellipse cx="105" cy="25" rx="20" ry="20" fill="#64748b"/>
+      <ellipse cx="105" cy="25" rx="11" ry="11" fill="#cbd5e1"/>
+      <circle cx="100" cy="12" r="5" fill="#fda4af"/> <!-- Mini bow -->
+
+      <!-- Body & Legs -->
+      <ellipse cx="65" cy="130" rx="42" ry="40" fill="#64748b"/>
+      <ellipse cx="65" cy="132" rx="26" ry="26" fill="#e2e8f0"/>
+      <!-- Feet -->
+      <ellipse cx="30" cy="160" rx="18" ry="12" fill="#475569"/>
+      <ellipse cx="100" cy="160" rx="18" ry="12" fill="#475569"/>
+
+      <!-- Head -->
+      <circle cx="65" cy="70" r="48" fill="#64748b"/>
+      <!-- Snout -->
+      <ellipse cx="65" cy="80" rx="24" ry="18" fill="#ffffff"/>
+      <!-- Nose -->
+      <ellipse cx="65" cy="74" rx="8" ry="6" fill="#1e293b"/>
+      <path d="M 65 80 L 65 86 M 58 87 Q 65 92 72 87" fill="none" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+
+      <!-- Eyes (Happy closed smiling arcs) -->
+      <path d="M 46 64 Q 52 58 58 64" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M 72 64 Q 78 58 84 64" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- Blush cheeks -->
+      <ellipse cx="44" cy="74" rx="8" ry="5" fill="#fbcfe8"/>
+      <ellipse cx="86" cy="74" rx="8" ry="5" fill="#fbcfe8"/>
+
+      <!-- Waving Hand Left -->
+      <ellipse cx="20" cy="115" rx="14" ry="12" fill="#64748b"/>
+      <!-- Right Waving Hand -->
+      <ellipse cx="112" cy="98" rx="14" ry="12" fill="#64748b" transform="rotate(-20, 112, 98)"/>
+
+      <!-- Speech Heart Bubble -->
+      <g transform="translate(118, 42)">
+        <path d="M 0 15 C -8 5, 2 -5, 12 3 C 22 -5, 32 5, 24 15 C 16 26, 12 30, 0 34 Z" fill="#1e293b"/>
+        <path d="M 12 10 C 10 7, 7 7, 6 9 C 5 11, 7 14, 12 18 C 17 14, 19 11, 18 9 C 17 7, 14 7, 12 10 Z" fill="#f43f5e"/>
+      </g>
+    </g>
+
+    <!-- Name Badge underneath bear: ♥ Hayati ♥ -->
+    <g transform="translate(30, 265)">
+      <rect x="0" y="0" width="190" height="38" rx="19" fill="#f43f5e" stroke="#1e293b" stroke-width="2.5" filter="url(#shadow)"/>
+      <text x="25" y="24" font-size="14" fill="#ffffff">♥</text>
+      <text x="95" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#ffffff" text-anchor="middle">Hayati</text>
+      <text x="165" y="24" font-size="14" fill="#ffffff">♥</text>
+    </g>
+  </g>
+
+  <!-- Interactive Mock Elements (Audio button & Likes) -->
+  <g transform="translate(365, 360)">
+    <!-- Audio Button Circle -->
+    <circle cx="35" cy="35" r="32" fill="#475569" opacity="0.85"/>
+    <path d="M 28 28 L 33 28 L 40 22 L 40 48 L 33 42 L 28 42 Z" fill="#ffffff"/>
+    <path d="M 44 28 Q 48 35 44 42" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Heart Likes Counter Bottom Right -->
+  <g transform="translate(710, 360)">
+    <path d="M 25 35 C 25 20, 5 10, -8 30 C -20 10, -40 20, -40 35 C -40 60, -8 80, -8 92 C -8 80, 25 60, 25 35 Z" fill="none" stroke="#ffffff" stroke-width="5" filter="url(#shadow)"/>
+    <text x="-8" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#ffffff" text-anchor="middle" filter="url(#shadow)">Likes</text>
+  </g>
+</svg>

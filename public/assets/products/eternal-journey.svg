@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="journey-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="50%" stop-color="#fce7f3"/>
+      <stop offset="100%" stop-color="#fae8ff"/>
+    </linearGradient>
+    <filter id="p-shadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#journey-bg)"/>
+
+  <!-- Timeline Center Line -->
+  <path d="M 80 250 Q 240 180 400 250 T 720 250" fill="none" stroke="#f43f5e" stroke-width="4" stroke-dasharray="6,6"/>
+
+  <!-- Milestone 1 Polaroid Frame -->
+  <g transform="translate(90, 80) rotate(-6)" filter="url(#p-shadow)">
+    <rect width="180" height="220" rx="8" fill="#ffffff"/>
+    <rect x="15" y="15" width="150" height="140" rx="4" fill="#fda4af"/>
+    <!-- Couple silhouette or coffee cup -->
+    <circle cx="90" cy="75" r="30" fill="#f43f5e"/>
+    <path d="M 60 140 C 60 110 120 110 120 140 Z" fill="#f43f5e"/>
+    <text x="90" y="185" font-family="'Caveat', cursive, sans-serif" font-size="20" font-weight="bold" fill="#0f172a" text-anchor="middle">Day We Met ✨</text>
+    <text x="90" y="205" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b" text-anchor="middle">14 Feb 2023</text>
+  </g>
+
+  <!-- Milestone 2 Milestone Badge Center -->
+  <g transform="translate(340, 190)" filter="url(#p-shadow)">
+    <circle cx="60" cy="60" r="54" fill="#ffffff" stroke="#f43f5e" stroke-width="4"/>
+    <circle cx="60" cy="60" r="46" fill="#fff1f2"/>
+    <text x="60" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="24" fill="#f43f5e" text-anchor="middle">730</text>
+    <text x="60" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#881337" text-anchor="middle">DAYS OF LOVE</text>
+  </g>
+
+  <!-- Milestone 3 Polaroid Frame -->
+  <g transform="translate(530, 110) rotate(8)" filter="url(#p-shadow)">
+    <rect width="180" height="220" rx="8" fill="#ffffff"/>
+    <rect x="15" y="15" width="150" height="140" rx="4" fill="#fecdd3"/>
+    <!-- Heart icon -->
+    <path d="M 90 70 C 90 55 75 45 62 58 C 50 45 35 55 35 70 C 35 95 62 110 62 120 C 62 110 90 95 90 70 Z" fill="#e11d48" transform="translate(28, -8) scale(1)"/>
+    <text x="90" y="185" font-family="'Caveat', cursive, sans-serif" font-size="20" font-weight="bold" fill="#0f172a" text-anchor="middle">Forever &amp; Always</text>
+    <text x="90" y="205" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Our Next Chapter</text>
+  </g>
+
+  <!-- Bottom Interactive Ribbon -->
+  <g transform="translate(220, 390)">
+    <rect width="360" height="50" rx="25" fill="#f43f5e" filter="url(#p-shadow)"/>
+    <text x="180" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="16" fill="#ffffff" text-anchor="middle">💌 Click to Unfold Our Memories</text>
+  </g>
+</svg>

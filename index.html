@@ -1,0 +1,1042 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary SEO Metadata -->
+    <title>Love Script — Romantic Customized Web Projects</title>
+    <meta name="description" content="Love Script creates beautiful customized romantic websites for birthdays, love stories, proposals, anniversaries, and unforgettable digital moments." />
+    <meta name="keywords" content="romantic websites, customized love page, birthday web project, proposal website, digital anniversary gift, animated romantic site, love script" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://lovescript.store/" />
+
+    <!-- OpenGraph / Facebook Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Love Script — Romantic Customized Web Projects" />
+    <meta property="og:description" content="Turn your feelings into something they’ll never forget. Explore customized romantic websites, proposals, and birthday keepsakes." />
+    <meta property="og:url" content="https://lovescript.store/" />
+    <meta property="og:site_name" content="Love Script" />
+    <meta property="og:image" content="/assets/products/birthday-love.svg" />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Love Script — Romantic Customized Web Projects" />
+    <meta name="twitter:description" content="Personalized romantic web projects for birthdays, proposals, love stories, and anniversaries." />
+    <meta name="twitter:image" content="/assets/products/birthday-love.svg" />
+
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Love Script",
+      "image": "https://lovescript.store/assets/logo/love-script-logo.svg",
+      "description": "Love Script creates customized romantic web projects such as personalized birthday wishes, love pages, and proposal pages.",
+      "url": "https://lovescript.store/",
+      "priceRange": "$35 - $59",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lovescript.store/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- External CDNs: ScrollReveal & EmailJS -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="romantic-grid-bg">
+    <!-- Ambient Floating Hearts Background Particle Container -->
+    <div class="floating-hearts-container" aria-hidden="true">
+      <span class="floating-heart-particle" style="left: 10%; animation-delay: 0s; font-size: 20px;">❤️</span>
+      <span class="floating-heart-particle" style="left: 25%; animation-delay: 3s; font-size: 16px;">💖</span>
+      <span class="floating-heart-particle" style="left: 45%; animation-delay: 6s; font-size: 24px;">✨</span>
+      <span class="floating-heart-particle" style="left: 65%; animation-delay: 1.5s; font-size: 18px;">💕</span>
+      <span class="floating-heart-particle" style="left: 85%; animation-delay: 4.5s; font-size: 22px;">🌸</span>
+      <span class="floating-heart-particle" style="left: 92%; animation-delay: 8s; font-size: 15px;">❤️</span>
+    </div>
+
+    <!-- Header & Navigation Bar -->
+    <header class="navbar-header" id="main-navbar">
+      <div class="container navbar-inner">
+        <!-- Logo -->
+        <a class="brand-logo-link" data-nav="home" href="#home" id="brand-logo">
+          <div class="brand-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div class="brand-text-title">
+            Love<span>Script</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="nav-desktop-links" aria-label="Main Navigation">
+          <span class="nav-active-bar" id="nav-active-bar"></span>
+          <a class="nav-link-item active" data-nav="home" href="#home">Home</a>
+          <a class="nav-link-item" data-nav="products-section" href="#products-section">Collection</a>
+          <a class="nav-link-item" data-nav="workflow" href="#workflow">How It Works</a>
+          <a class="nav-link-item" data-nav="about" href="#about">About</a>
+          <a class="nav-link-item" data-nav="contact" href="#contact">Contact</a>
+        </nav>
+
+        <!-- Right Side Actions: Theme Switcher & Cart Badge -->
+        <div class="nav-actions-group">
+          <!-- Light/Dark Theme Toggle -->
+          <button class="icon-btn theme-toggle-btn" id="btn-theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+
+          <!-- Shopping Cart Button with Dynamic Badge -->
+          <button class="icon-btn cart-button-trigger" data-nav="cart" id="btn-nav-cart" aria-label="View Shopping Cart" title="View Cart">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="cart-badge-count" style="display: none;">0</span>
+          </button>
+
+          <!-- Mobile Hamburger Menu Button -->
+          <button class="icon-btn mobile-menu-btn" id="btn-mobile-menu" aria-label="Open mobile navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-drawer" role="dialog" aria-modal="true">
+      <div class="mobile-drawer-sheet">
+        <div class="mobile-drawer-header">
+          <div class="brand-text-title" style="font-size: 1.3rem;">
+            Love<span>Script</span>
+          </div>
+          <button class="icon-btn" id="btn-close-drawer" aria-label="Close menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-drawer-links">
+          <li><a class="mobile-nav-item active" data-nav="home" href="#home">🏡 Home</a></li>
+          <li><a class="mobile-nav-item" data-nav="products-section" href="#products-section">✨ Collection</a></li>
+          <li><a class="mobile-nav-item" data-nav="workflow" href="#workflow">🛠️ How It Works</a></li>
+          <li><a class="mobile-nav-item" data-nav="cart" href="#cart">🛒 My Cart</a></li>
+          <li><a class="mobile-nav-item" data-nav="about" href="#about">📖 About &amp; Policies</a></li>
+          <li><a class="mobile-nav-item" data-nav="contact" href="#contact">💌 Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Application Content Area -->
+    <main id="main-content">
+      <!-- ===================================================================
+           PAGE 1: HOME SECTION
+           =================================================================== -->
+      <section id="home" class="page-view active-view">
+        <!-- Hero Area -->
+        <div class="hero-wrapper">
+          <div class="container hero-grid">
+            <!-- Left Hero Content -->
+            <div class="hero-text-content">
+              <div class="hero-badge-pill">
+                <span>💌</span>
+                <span>Handcrafted Romantic Digital Experiences</span>
+              </div>
+              <h1 class="hero-main-title">
+                Turn Your Feelings Into <em>Something They’ll Never Forget</em>.
+              </h1>
+              <p class="hero-description">
+                Love Script designs and handcrafts customized romantic websites — personalized birthday surprises, viral proposal pages, and memory timelines delivered right to your loved one’s screen.
+              </p>
+              <div class="hero-cta-row">
+                <a href="#products-section" class="btn-primary" data-nav="products-section" id="btn-hero-explore">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  Explore Collection
+                </a>
+                <a href="#contact" class="btn-secondary" data-nav="contact" id="btn-hero-create">
+                  <span class="handwritten" style="font-size: 1.3rem;">Create Your Story</span> 💖
+                </a>
+              </div>
+              <!-- Hero Stats Badges -->
+              <div class="hero-stats-row">
+                <div class="stat-item">
+                  <div class="stat-item-number">100%</div>
+                  <div class="stat-item-label">Personalized</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-item-number">24–48h</div>
+                  <div class="stat-item-label">Turnaround</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-item-number">5.0 ★</div>
+                  <div class="stat-item-label">Couples Rating</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side Visual with Right-to-Left Scroll Reveal -->
+            <div class="hero-visual-card hero-reveal-rtl" id="hero-visual-card">
+              <div class="hero-image-wrapper">
+                <img 
+                  src="/assets/images/indian-couple.jpg" 
+                  alt="Loving Indian couple illustration in traditional attire" 
+                  class="hero-preview-art" 
+                  id="hero-preview-art" 
+                  referrerpolicy="no-referrer" 
+                  onerror="this.onerror=null;this.src='/indian-couple.jpg';" 
+                />
+              </div>
+              <div class="hero-floating-tag" id="hero-floating-tag">
+                <span>💖</span>
+                <span>Personalized Digital Love Stories</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Carousel (Featured, Promotions, New Designs) -->
+        <div class="container carousel-section">
+          <div class="carousel-container" id="main-carousel">
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-arrow next" id="carousel-next" aria-label="Next slide">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+            <!-- Carousel Slides Track -->
+            <div class="carousel-track" id="carousel-track">
+              <!-- Slide 1: Birthday Love -->
+              <div class="carousel-slide">
+                <div class="carousel-slide-content">
+                  <span class="carousel-tag-pill">Popular Birthday Wonder</span>
+                  <h2 class="carousel-slide-title">Happy Birthday Love Story</h2>
+                  <p class="carousel-slide-desc">
+                    Includes cute waving mascot bear, customized date badge, animated party bunting flags, romantic background melody, and surprise pop balloons.
+                  </p>
+                  <button class="btn-primary" onclick="window.LoveScript.triggerOrderFromPreview('LS001')">
+                    Order This Project ($49)
+                  </button>
+                </div>
+                <div class="carousel-slide-visual">
+                  <img src="/assets/products/birthday-love.svg" alt="Birthday Project Banner" />
+                </div>
+              </div>
+
+              <!-- Slide 2: Proposal Love -->
+              <div class="carousel-slide">
+                <div class="carousel-slide-content">
+                  <span class="carousel-tag-pill" style="background:#be123c;">Viral Proposal Hit</span>
+                  <h2 class="carousel-slide-title">Do You Love Me? Proposal Page</h2>
+                  <p class="carousel-slide-desc">
+                    The legendary interactive proposal with a runaway 'No' button that refuses to be clicked, and heartwarming heart confetti explosion when they say 'Yes'.
+                  </p>
+                  <button class="btn-primary" onclick="window.LoveScript.triggerOrderFromPreview('LS002')">
+                    Order This Project ($39)
+                  </button>
+                </div>
+                <div class="carousel-slide-visual">
+                  <img src="/assets/products/do-you-love-me.svg" alt="Proposal Project Banner" />
+                </div>
+              </div>
+
+              <!-- Slide 3: Eternal Journey -->
+              <div class="carousel-slide">
+                <div class="carousel-slide-content">
+                  <span class="carousel-tag-pill" style="background:#881337;">Anniversary Keepsake</span>
+                  <h2 class="carousel-slide-title">Our Eternal Love Journey</h2>
+                  <p class="carousel-slide-desc">
+                    A romantic relationship timeline displaying your favorite photos as retro polaroids, an active days-together counter, and digital wax-sealed love letter.
+                  </p>
+                  <button class="btn-primary" onclick="window.LoveScript.triggerOrderFromPreview('LS003')">
+                    Order This Project ($59)
+                  </button>
+                </div>
+                <div class="carousel-slide-visual">
+                  <img src="/assets/products/eternal-journey.svg" alt="Love Journey Banner" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Dots Pagination Indicators -->
+            <div class="carousel-dots" id="carousel-dots"></div>
+          </div>
+        </div>
+
+        <!-- Product Search & Filter Section -->
+        <div class="container section-padding" id="products-section" style="padding-top: 30px;">
+          <div class="search-filter-section">
+            <div style="text-align: center; margin-bottom: 24px;">
+              <h2 class="font-serif" style="font-size: 2.2rem; font-weight: 800; color: var(--text-main);">
+                Explore Romantic Creations
+              </h2>
+              <p style="color: var(--text-muted); font-size: 1.05rem;">
+                Every web project is customized with your names, photos, music, and private love messages.
+              </p>
+            </div>
+
+            <!-- Modern Search Input Bar -->
+            <div class="search-bar-container">
+              <span class="search-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input
+                type="text"
+                id="product-search-input"
+                class="search-input"
+                placeholder="Search by name, ID (e.g. LS001), category, or keywords..."
+                aria-label="Search romantic products"
+              />
+              <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Category Filter Chips -->
+            <div class="category-pills-row">
+              <button class="category-chip active" data-category="All">All Creations</button>
+              <button class="category-chip" data-category="Birthday">🎂 Birthday</button>
+              <button class="category-chip" data-category="Proposal">💍 Proposal</button>
+              <button class="category-chip" data-category="Anniversary">✨ Anniversary</button>
+              <button class="category-chip" data-category="Romantic">💌 Love Letter</button>
+              <button class="category-chip" data-category="Valentine">🌹 Valentine</button>
+              <button class="category-chip" data-category="Celebration">🎉 Celebration</button>
+            </div>
+
+            <!-- Search Results Info -->
+            <div class="search-results-info">
+              <span id="search-results-count">Showing 6 romantic creations</span>
+              <span style="font-size: 0.85rem; color: var(--text-light);">Instant digital preview available</span>
+            </div>
+          </div>
+
+          <!-- Product Grid -->
+          <div class="product-grid" id="product-grid">
+            <!-- Dynamically populated by script.js -->
+          </div>
+
+          <!-- No Products Found State -->
+          <div id="no-products-found" class="no-results-box" style="display: none;">
+            <div class="no-results-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">
+              No romantic creations found
+            </h3>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">
+              Try searching with different keywords or reset your filters.
+            </p>
+            <button id="btn-reset-search" class="btn-secondary">
+              Reset Search &amp; Filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           PAGE 2: SHOPPING CART SECTION
+           =================================================================== -->
+      <section id="cart" class="container section-padding cart-section-view">
+        <div style="margin-bottom: 36px; text-align: center;">
+          <h1 class="font-serif" style="font-size: 2.5rem; font-weight: 800; color: var(--text-main);">
+            Your Romantic Cart
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Review your customized digital selections before submitting your order details.
+          </p>
+        </div>
+
+        <div class="cart-layout-grid">
+          <!-- Left Column: Items Table -->
+          <div>
+            <div class="cart-items-table-wrap" id="cart-table-wrapper">
+              <div class="cart-table-header">
+                <div>Project Details</div>
+                <div>Price</div>
+                <div>Quantity</div>
+                <div>Subtotal</div>
+                <div></div>
+              </div>
+              <div id="cart-items-container">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Empty Cart State -->
+            <div id="cart-empty-box" class="cart-empty-state" style="display: none;">
+              <div class="cart-empty-icon">
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+              </div>
+              <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
+                Your Romantic Cart is Empty
+              </h3>
+              <p style="color: var(--text-muted); max-width: 440px; margin: 0 auto 24px;">
+                You haven’t added any custom web experiences yet. Explore our handcrafted collection to surprise someone special!
+              </p>
+              <button class="btn-primary" onclick="window.LoveScript.switchView('products-section')">
+                Explore Romantic Creations 💖
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: Cart Summary -->
+          <div class="cart-summary-card">
+            <h2 class="cart-summary-title">Order Summary</h2>
+            <div class="summary-row">
+              <span>Selected Projects</span>
+              <span id="cart-subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+              <span>Handcrafted Customization</span>
+              <span style="color: #10b981; font-weight: 700;">FREE</span>
+            </div>
+            <div class="summary-row">
+              <span>Express Digital Delivery</span>
+              <span style="color: #10b981; font-weight: 700;">FREE</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Estimated Total</span>
+              <span class="total-amount" id="cart-total">$0</span>
+            </div>
+
+            <button class="btn-primary" id="btn-checkout-cart" style="width: 100%; margin-top: 24px; padding: 16px;">
+              Proceed to Order All 💌
+            </button>
+
+            <div style="text-align: center; margin-top: 16px;">
+              <a href="#products-section" onclick="window.LoveScript.switchView('products-section')" style="font-size: 0.88rem; color: var(--primary-rose); font-weight: 700;">
+                ← Continue Browsing Collection
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           WORKFLOW SECTION (01 Choose, 02 Order, 03 Customize, 04 Review, 05 Deliver)
+           =================================================================== -->
+      <section id="workflow" class="container section-padding">
+        <div style="text-align: center; max-width: 680px; margin: 0 auto 40px;">
+          <div class="hero-badge-pill">
+            <span>✨</span>
+            <span>Simple 5-Step Process</span>
+          </div>
+          <h2 class="font-serif" style="font-size: 2.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px;">
+            How Love Script Works
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            From your cherished feelings to a living, animated website they will keep forever.
+          </p>
+        </div>
+
+        <div class="workflow-timeline">
+          <!-- Step 1 -->
+          <div class="workflow-card">
+            <div class="workflow-step-num">01</div>
+            <div class="workflow-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </div>
+            <h3 class="workflow-title">Choose</h3>
+            <p class="workflow-desc">Select a romantic web project design from our curated collection.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="workflow-card">
+            <div class="workflow-step-num">02</div>
+            <div class="workflow-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </div>
+            <h3 class="workflow-title">Order</h3>
+            <p class="workflow-desc">Submit your contact info, recipient name, date, and love message.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="workflow-card">
+            <div class="workflow-step-num">03</div>
+            <div class="workflow-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 20h9"></path>
+                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+              </svg>
+            </div>
+            <h3 class="workflow-title">Customize</h3>
+            <p class="workflow-desc">Our team handcrafts animations, music, photos, and interactive features.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="workflow-card">
+            <div class="workflow-step-num">04</div>
+            <div class="workflow-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="workflow-title">Review</h3>
+            <p class="workflow-desc">You receive a private staging link to preview and request any revisions.</p>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="workflow-card">
+            <div class="workflow-step-num">05</div>
+            <div class="workflow-icon-bubble">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3 class="workflow-title">Deliver</h3>
+            <p class="workflow-desc">The final personalized website goes live with a custom shareable link!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           PAGE 3: ABOUT & POLICIES SECTION
+           =================================================================== -->
+      <section id="about" class="container section-padding">
+        <!-- Our Company Header -->
+        <div class="about-company-grid">
+          <div>
+            <div class="hero-badge-pill">
+              <span>📖</span>
+              <span>Our Story &amp; Mission</span>
+            </div>
+            <h2 class="font-serif" style="font-size: 2.6rem; font-weight: 800; color: var(--text-main); line-height: 1.2; margin-bottom: 20px;">
+              Transforming Emotions Into <span style="color: var(--primary-rose); font-style: italic;">Living Digital Art</span>.
+            </h2>
+            <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 20px;">
+              <strong>Love Script</strong> was founded on a simple belief: in an age of quick text messages and expiring stories, true feelings deserve a permanent, interactive digital sanctuary. We craft customized romantic websites that capture anniversaries, birthdays, heartfelt confessions, and life-changing proposals.
+            </p>
+            <div class="about-features-list">
+              <div class="about-feature-item">
+                <div class="about-check-icon">✓</div>
+                <div>
+                  <h4 style="font-weight: 800; font-size: 1rem; color: var(--text-main);">Emotional Craftsmanship</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted);">Every color, animation, and melody is tailored to your unique love story.</p>
+                </div>
+              </div>
+              <div class="about-feature-item">
+                <div class="about-check-icon">✓</div>
+                <div>
+                  <h4 style="font-weight: 800; font-size: 1rem; color: var(--text-main);">Flawless On Any Device</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted);">Mobile-first design ensures your recipient gets a magical experience on their phone.</p>
+                </div>
+              </div>
+              <div class="about-feature-item">
+                <div class="about-check-icon">✓</div>
+                <div>
+                  <h4 style="font-weight: 800; font-size: 1rem; color: var(--text-main);">Dedicated 24/7 Support</h4>
+                  <p style="font-size: 0.9rem; color: var(--text-muted);">Direct communication via Instagram DM, Messenger, and Email.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-couple-card" id="about-couple-card">
+            <div class="about-couple-art-wrap">
+              <img src="/assets/images/vecteezy_cute-lovers-couple-greeting-pose-boy-giving-red-love-heart_10405747.jpg" alt="Sweet romantic couple sharing love heart" class="about-couple-art" id="about-couple-image" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='/vecteezy_cute-lovers-couple-greeting-pose-boy-giving-red-love-heart_10405747.jpg';" />
+              <div class="about-couple-tag">
+                <span>❤️</span>
+                <span>Handcrafted With Heart</span>
+              </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px;">
+              <div class="brand-icon" style="width:40px; height:40px; font-size: 1.2rem;">❤️</div>
+              <div>
+                <h3 class="font-serif" style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin: 0;">Why Choose Love Script?</h3>
+                <span style="font-size: 0.82rem; color: var(--text-muted);">Premium Romantic Digital Marketplace</span>
+              </div>
+            </div>
+            <p style="font-size: 0.94rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              Flowers wilt, cards get lost, but a custom interactive website stays with your partner forever. With personalized music, interactive surprise mini-games, and custom photo memories, your gesture will stand out like nothing else.
+            </p>
+            <div style="background: var(--bg-secondary); border-radius: var(--radius-md); padding: 16px; border: 1px solid var(--accent-border);">
+              <p class="handwritten" style="font-size: 1.35rem; color: var(--primary-rose); line-height: 1.35; margin: 0 0 6px;">
+                "They cried tears of joy when the music started playing and the love letter unfolded. Best anniversary gift ever!"
+              </p>
+              <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-main); display: block;">
+                — Michael &amp; Sarah (Verified Couple)
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Our Policies Section -->
+        <div style="margin-top: 60px;">
+          <div style="text-align: center; margin-bottom: 36px;">
+            <h3 class="font-serif" style="font-size: 2rem; font-weight: 800; color: var(--text-main);">
+              Our Policies &amp; Guarantees
+            </h3>
+            <p style="color: var(--text-muted);">Transparent, fair, and designed to protect your special moments.</p>
+          </div>
+
+          <div class="policies-grid">
+            <!-- Customization Policy -->
+            <div class="policy-card">
+              <h4 class="policy-card-title">
+                <span>🎨</span> Customization Policy
+              </h4>
+              <p class="policy-card-text">
+                Every web project includes personalized names, dates, custom photos, audio tracks, and custom love letters. You provide your requirements during or after order submission.
+              </p>
+            </div>
+
+            <!-- Delivery Policy -->
+            <div class="policy-card">
+              <h4 class="policy-card-title">
+                <span>⚡</span> Delivery Policy
+              </h4>
+              <p class="policy-card-text">
+                Standard delivery is within 24 to 48 hours. Once completed, you receive a private staging URL to preview and test before sharing with your partner.
+              </p>
+            </div>
+
+            <!-- Revision Policy -->
+            <div class="policy-card">
+              <h4 class="policy-card-title">
+                <span>🔄</span> Revision Policy
+              </h4>
+              <p class="policy-card-text">
+                We include unlimited text and typo revisions, along with up to 2 design layout adjustments to ensure your project looks absolutely perfect.
+              </p>
+            </div>
+
+            <!-- Refund Policy -->
+            <div class="policy-card">
+              <h4 class="policy-card-title">
+                <span>🛡️</span> Refund Policy
+              </h4>
+              <p class="policy-card-text">
+                If you are not satisfied with your private staging preview before final deployment, we will revise it or issue a full refund within 7 days of ordering.
+              </p>
+            </div>
+
+            <!-- Privacy Policy -->
+            <div class="policy-card" style="grid-column: 1 / -1;">
+              <h4 class="policy-card-title">
+                <span>🔒</span> Privacy &amp; Data Security Policy
+              </h4>
+              <p class="policy-card-text">
+                Your photos, love letters, and personal moments are 100% private. We never sell, share, or publicly display your projects without your explicit permission. Password-protected links are available upon request.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           PAGE 4: CONTACT SECTION
+           =================================================================== -->
+      <section id="contact" class="container section-padding">
+        <div style="text-align: center; max-width: 640px; margin: 0 auto 40px;">
+          <div class="hero-badge-pill">
+            <span>💌</span>
+            <span>Get in Touch</span>
+          </div>
+          <h2 class="font-serif" style="font-size: 2.5rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px;">
+            Let’s Create Magic Together
+          </h2>
+          <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Have a custom idea, special date, or need urgent express delivery? Send us a message or contact us directly on social media!
+          </p>
+        </div>
+
+        <div class="contact-layout-grid">
+          <!-- Left: Professional Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="font-serif" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 20px; color: var(--text-main);">
+              Send a Romantic Inquiry
+            </h3>
+            <form id="contact-form-element">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Full Name *</label>
+                <input type="text" id="contactName" name="contactName" class="form-input" placeholder="e.g. Alex Johnson" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Your Email Address *</label>
+                <input type="email" id="contactEmail" name="contactEmail" class="form-input" placeholder="e.g. alex@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">Subject *</label>
+                <input type="text" id="contactSubject" name="contactSubject" class="form-input" placeholder="e.g. Custom Birthday Website Inquiry" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Your Message or Custom Request *</label>
+                <textarea id="contactMessage" name="contactMessage" class="form-textarea" placeholder="Tell us about your celebration, special date, music preference..." required></textarea>
+              </div>
+
+              <!-- Success Alert Message -->
+              <div id="contact-success-msg" style="display: none; background: #ecfdf5; border: 1px solid #10b981; color: #065f46; padding: 12px 16px; border-radius: 8px; margin-bottom: 16px; font-weight: 600; font-size: 0.9rem;">
+                ❤️ Thank you! Your message has been sent. We will respond within 24 hours.
+              </div>
+
+              <button type="submit" id="btn-submit-contact" class="btn-primary" style="width: 100%; padding: 14px;">
+                Send Romantic Inquiry 💌
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Direct Social Contact Cards -->
+          <div class="social-cards-column">
+            <!-- Facebook Messenger Card -->
+            <div class="social-contact-card">
+              <div class="social-card-left">
+                <div class="social-platform-icon social-fb">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.914 1.455 5.518 3.735 7.15V22l3.435-1.884c.896.248 1.847.382 2.83.382 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.05 12.445l-2.613-2.787-5.1 2.787 5.61-5.955 2.678 2.787 5.034-2.787-5.61 5.955z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="social-card-title">Facebook Messenger</h4>
+                  <p class="social-card-desc">Chat live with our design team for immediate assistance.</p>
+                </div>
+              </div>
+              <a href="https://m.me/lovescript" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 18px; font-size: 0.85rem; white-space: nowrap;">
+                Message Us
+              </a>
+            </div>
+
+            <!-- Instagram DM Card -->
+            <div class="social-contact-card">
+              <div class="social-card-left">
+                <div class="social-platform-icon social-ig">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.13-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="social-card-title">Instagram DM</h4>
+                  <p class="social-card-desc">Follow our creations &amp; send audio notes directly.</p>
+                </div>
+              </div>
+              <a href="https://instagram.com/lovescript.store" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 18px; font-size: 0.85rem; white-space: nowrap;">
+                DM on Instagram
+              </a>
+            </div>
+
+            <!-- WhatsApp Direct Card -->
+            <div class="social-contact-card">
+              <div class="social-card-left">
+                <div class="social-platform-icon" style="background: #25d366;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="social-card-title">WhatsApp Quick Chat</h4>
+                  <p class="social-card-desc">Direct line for custom quotes and express dispatch.</p>
+                </div>
+              </div>
+              <a href="https://wa.me/1234567890?text=Hello%20Love%20Script!" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 18px; font-size: 0.85rem; white-space: nowrap;">
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         FOOTER
+         =================================================================== -->
+    <footer class="footer-wrap">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand Info -->
+          <div>
+            <div class="brand-text-title" style="margin-bottom: 14px;">
+              Love<span>Script</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 20px;">
+              Crafting unforgettable romantic web creations that speak from the heart. Customized for birthdays, proposals, anniversaries, and everyday love stories.
+            </p>
+            <div style="display: flex; gap: 12px;">
+              <a href="https://instagram.com/lovescript.store" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Instagram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.13-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                </svg>
+              </a>
+              <a href="https://m.me/lovescript" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Facebook Messenger">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.914 1.455 5.518 3.735 7.15V22l3.435-1.884c.896.248 1.847.382 2.83.382 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Navigation Links -->
+          <div>
+            <h4 class="footer-col-title">Navigation</h4>
+            <ul class="footer-nav-list">
+              <li><a href="#home" data-nav="home" class="footer-nav-link">Home</a></li>
+              <li><a href="#products-section" data-nav="products-section" class="footer-nav-link">Romantic Collection</a></li>
+              <li><a href="#workflow" data-nav="workflow" class="footer-nav-link">How It Works</a></li>
+              <li><a href="#cart" data-nav="cart" class="footer-nav-link">Shopping Cart</a></li>
+              <li><a href="#contact" data-nav="contact" class="footer-nav-link">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Popular Categories -->
+          <div>
+            <h4 class="footer-col-title">Collections</h4>
+            <ul class="footer-nav-list">
+              <li><a href="#products-section" class="footer-nav-link">Birthday Love Stories</a></li>
+              <li><a href="#products-section" class="footer-nav-link">Interactive Proposal Pages</a></li>
+              <li><a href="#products-section" class="footer-nav-link">Relationship Timelines</a></li>
+              <li><a href="#products-section" class="footer-nav-link">Starry Love Letters</a></li>
+              <li><a href="#products-section" class="footer-nav-link">Valentine Secret Gardens</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Trust & Policies -->
+          <div>
+            <h4 class="footer-col-title">Policies</h4>
+            <ul class="footer-nav-list">
+              <li><a href="#about" data-nav="about" class="footer-nav-link">Customization Terms</a></li>
+              <li><a href="#about" data-nav="about" class="footer-nav-link">Express Delivery (24-48h)</a></li>
+              <li><a href="#about" data-nav="about" class="footer-nav-link">Unlimited Text Revisions</a></li>
+              <li><a href="#about" data-nav="about" class="footer-nav-link">7-Day Refund Guarantee</a></li>
+              <li><a href="#about" data-nav="about" class="footer-nav-link">Privacy &amp; Data Security</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div>
+            &copy; 2026 <strong>Love Script</strong>. All rights reserved. Handcrafted with love.
+          </div>
+          <div>
+            Romantic Customized Web Projects E-commerce Platform
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================================================================
+         MODALS & INTERACTIVE OVERLAYS
+         =================================================================== -->
+
+    <!-- 1. MULTI-STEP ORDER NOW MODAL -->
+    <div class="modal-backdrop" id="order-modal" role="dialog" aria-modal="true">
+      <div class="modal-content-box">
+        <div class="modal-header">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size: 1.2rem;">💌</span>
+            <h3 class="font-serif" style="font-size: 1.3rem; font-weight: 800; color: var(--text-main);">
+              Complete Your Romantic Order
+            </h3>
+          </div>
+          <button class="modal-close-btn" id="btn-close-order-modal" aria-label="Close modal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Step 1: Loading/Preparing Animation -->
+          <div id="order-step-loading" class="order-loading-overlay">
+            <div class="heart-spinner">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h4 style="font-family:'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">
+              Preparing Your Custom Script...
+            </h4>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">
+              Gathering your project canvas and personalization details.
+            </p>
+          </div>
+
+          <!-- Step 2: Customer Information & Selected Product Form -->
+          <div id="order-step-form" style="display: none;">
+            <!-- Injected Selected Product Summary -->
+            <div id="order-modal-summary"></div>
+
+            <!-- Direct Social Contact Options -->
+            <div class="order-direct-messaging-box">
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); display: block;">
+                Need help or want to chat with our team right away?
+              </span>
+              <div class="order-direct-buttons-row">
+                <button type="button" class="btn-social-direct social-fb" id="btn-order-msg-fb">
+                  <span>💬</span> Message Us on Facebook
+                </button>
+                <button type="button" class="btn-social-direct social-ig" id="btn-order-msg-ig">
+                  <span>📸</span> Message Us on Instagram
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Order Details Form -->
+            <form id="order-form-element">
+              <div class="form-group">
+                <label class="form-label" for="customerName">Your Full Name *</label>
+                <input type="text" id="customerName" name="customerName" class="form-input" placeholder="e.g. Liam Smith" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="customerEmail">Your Email Address *</label>
+                <input type="email" id="customerEmail" name="customerEmail" class="form-input" placeholder="e.g. liam@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="customerPhone">Phone / WhatsApp Number *</label>
+                <input type="tel" id="customerPhone" name="customerPhone" class="form-input" placeholder="e.g. +1 555 123 4567" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="customerInstagram">Instagram Handle / Profile Link (Optional)</label>
+                <input type="text" id="customerInstagram" name="customerInstagram" class="form-input" placeholder="e.g. @liam.romantic" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="customerFacebook">Facebook Profile Link (Optional)</label>
+                <input type="url" id="customerFacebook" name="customerFacebook" class="form-input" placeholder="e.g. https://facebook.com/liam" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="customizationNotes">Recipient Name &amp; Special Date (Optional)</label>
+                <textarea id="customizationNotes" name="customizationNotes" class="form-textarea" placeholder="e.g. Name: Hayati | Date: 23 May | Note: Include our song 'Perfect' and anniversary date."></textarea>
+              </div>
+
+              <button type="submit" id="btn-submit-order" class="btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;">
+                Submit Order Details ❤️
+              </button>
+            </form>
+          </div>
+
+          <!-- Step 3: Success Confirmation Screen -->
+          <div id="order-step-success" class="order-success-screen" style="display: none;">
+            <div class="order-success-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <h3 class="font-serif" style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">
+              Order Successful ❤️
+            </h3>
+            <div class="order-id-badge" id="order-success-id">Order ID: #LS-2026</div>
+            <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; max-width: 440px; margin: 0 auto 28px;">
+              Thank you for choosing <strong>Love Script</strong>. Our creative team has received your order and will contact you within <strong>24 hours</strong> to finalize your custom photos, music, and private preview.
+            </p>
+
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <button class="btn-primary" onclick="window.LoveScript.switchView('products-section'); document.getElementById('order-modal').classList.remove('active'); document.body.style.overflow='auto';">
+                Continue Shopping
+              </button>
+              <button class="btn-secondary" onclick="window.LoveScript.switchView('home'); document.getElementById('order-modal').classList.remove('active'); document.body.style.overflow='auto';">
+                Return Home
+              </button>
+              <button class="btn-secondary" onclick="window.LoveScript.switchView('contact'); document.getElementById('order-modal').classList.remove('active'); document.body.style.overflow='auto';">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. PRODUCT LIVE PREVIEW MODAL -->
+    <div class="modal-backdrop" id="preview-modal" role="dialog" aria-modal="true">
+      <div class="modal-content-box preview-modal-box">
+        <div class="modal-header" style="padding: 14px 20px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.2rem;">✨</span>
+            <span id="preview-product-name" style="font-family:'Playfair Display', serif; font-weight: 800; font-size: 1.15rem; color: var(--text-main);">Live Product Demo</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <button class="btn-secondary" id="preview-open-tab-btn" style="padding: 6px 14px; font-size: 0.8rem;" title="Open in new browser tab">
+              <span>↗</span> Open in New Tab
+            </button>
+            <button class="modal-close-btn" id="btn-close-preview-modal" aria-label="Close preview">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulated Browser Frame -->
+        <div class="preview-browser-frame">
+          <div class="preview-browser-toolbar">
+            <div class="browser-dots">
+              <span class="b-dot b-red"></span>
+              <span class="b-dot b-yellow"></span>
+              <span class="b-dot b-green"></span>
+            </div>
+            <div class="browser-address-bar">
+              <span>🔒</span> <span id="preview-address-url">https://lovescript.store/live/ls001</span>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 700;">
+              LIVE DEMO
+            </div>
+          </div>
+
+          <!-- Interactive Viewport -->
+          <div class="preview-interactive-viewport" id="preview-viewport">
+            <!-- Injected via script.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main JavaScript Logic Module -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
