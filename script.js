@@ -608,6 +608,24 @@ export async function handleOrderSubmit(event) {
   const facebook = form.elements["customerFacebook"]?.value.trim() || "Not provided";
   const notes = form.elements["customizationNotes"]?.value.trim() || "Standard customization";
 
+  // Check required contact via either Facebook or Instagram
+  const checkFb = document.getElementById("contact-check-fb");
+  const checkIg = document.getElementById("contact-check-ig");
+  const isFbContacted = checkFb && checkFb.checked;
+  const isIgContacted = checkIg && checkIg.checked;
+  const contactErrorEl = document.getElementById("order-contact-error");
+  const messagingBox = document.querySelector(".order-direct-messaging-box");
+
+  if (!isFbContacted && !isIgContacted) {
+    if (contactErrorEl) contactErrorEl.style.display = "flex";
+    if (messagingBox) {
+      messagingBox.classList.add("order-contact-error-highlight");
+      messagingBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    showToast("Please check either Facebook or Instagram contact to place your order.");
+    return;
+  }
+
   if (!name || !email || !phone) {
     showToast("Please fill in your Name, Email and Phone.");
     return;
@@ -632,6 +650,7 @@ export async function handleOrderSubmit(event) {
     customer_phone: phone,
     instagram: instagram,
     facebook: facebook,
+    contact_verified: [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
     custom_notes: notes,
     product_name: pendingOrderItems[0]?.name || "Romantic Creation",
     product_id: pendingOrderItems[0]?.id || "LS000",
@@ -1416,16 +1435,40 @@ export function initApp() {
   const contactForm = document.getElementById("contact-form-element");
   if (contactForm) contactForm.addEventListener("submit", handleContactSubmit);
 
-  // Social One-click buttons in Order Form
+  // Social One-click buttons & Checkboxes in Order Form
+  const clearSocialContactError = () => {
+    const errorEl = document.getElementById("order-contact-error");
+    const box = document.querySelector(".order-direct-messaging-box");
+    if (errorEl) errorEl.style.display = "none";
+    if (box) box.classList.remove("order-contact-error-highlight");
+  };
+
+  const checkFbEl = document.getElementById("contact-check-fb");
+  const checkIgEl = document.getElementById("contact-check-ig");
+  if (checkFbEl) {
+    checkFbEl.addEventListener("change", () => {
+      if (checkFbEl.checked) clearSocialContactError();
+    });
+  }
+  if (checkIgEl) {
+    checkIgEl.addEventListener("change", () => {
+      if (checkIgEl.checked) clearSocialContactError();
+    });
+  }
+
   const fbBtn = document.getElementById("btn-order-msg-fb");
   if (fbBtn) {
     fbBtn.addEventListener("click", () => {
+      if (checkFbEl) checkFbEl.checked = true;
+      clearSocialContactError();
       window.open(CONFIG.facebookMessengerUrl, "_blank", "noopener,noreferrer");
     });
   }
   const igBtn = document.getElementById("btn-order-msg-ig");
   if (igBtn) {
     igBtn.addEventListener("click", () => {
+      if (checkIgEl) checkIgEl.checked = true;
+      clearSocialContactError();
       window.open(CONFIG.instagramUrl, "_blank", "noopener,noreferrer");
     });
   }
