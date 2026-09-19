@@ -1330,6 +1330,8 @@ export function initApp() {
       e.preventDefault();
       const view = e.currentTarget.getAttribute("data-nav");
       switchView(view);
+      const drawer = document.getElementById("mobile-drawer");
+      if (drawer) drawer.classList.remove("open");
     });
   });
 
