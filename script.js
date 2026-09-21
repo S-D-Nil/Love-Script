@@ -18,10 +18,10 @@
    ========================================================================== */
 export const CONFIG = {
   // EmailJS Credentials (https://www.emailjs.com/)
-  emailjsPublicKey: "YOUR_PUBLIC_KEY",          // e.g. "user_123456789"
-  emailjsServiceId: "YOUR_SERVICE_ID",          // e.g. "service_lovescript"
-  emailjsOrderTemplateId: "YOUR_ORDER_TEMPLATE_ID", // e.g. "template_order_xyz"
-  emailjsContactTemplateId: "YOUR_CONTACT_TEMPLATE_ID", // e.g. "template_contact_abc"
+  emailjsPublicKey: "0fpeNGIkCvt2TOnpN",
+  emailjsServiceId: "service_5wnwxf1",
+  emailjsOrderTemplateId: "template_00wqj2g",
+  emailjsContactTemplateId: "template_p9p7ruo",
 
   // FormSubmit Fallback (https://formsubmit.co/)
   // Replace with your email to receive form submissions via FormSubmit
@@ -1294,6 +1294,16 @@ export function initScrollReveal() {
 export function initApp() {
   const existingToast = document.getElementById("app-toast");
   if (existingToast) existingToast.remove();
+  
+  // Initialize EmailJS with public key
+  if (window.emailjs && CONFIG.emailjsPublicKey) {
+    try {
+      window.emailjs.init({ publicKey: CONFIG.emailjsPublicKey });
+    } catch (e) {
+      console.warn("EmailJS init:", e);
+    }
+  }
+
   initTheme();
   updateCartBadge();
   filterProducts();
