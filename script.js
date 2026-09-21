@@ -601,12 +601,12 @@ export async function handleOrderSubmit(event) {
   const stepSuccess = document.getElementById("order-step-success");
   const orderIdDisplay = document.getElementById("order-success-id");
 
-  const name = form.elements["customerName"]?.value.trim();
-  const email = form.elements["customerEmail"]?.value.trim();
-  const phone = form.elements["customerPhone"]?.value.trim();
-  const instagram = form.elements["customerInstagram"]?.value.trim() || "Not provided";
-  const facebook = form.elements["customerFacebook"]?.value.trim() || "Not provided";
-  const notes = form.elements["customizationNotes"]?.value.trim() || "Standard customization";
+  const name = (form.elements["customerName"]?.value || document.getElementById("customerName")?.value || "").trim();
+  const email = (form.elements["customerEmail"]?.value || document.getElementById("customerEmail")?.value || "").trim();
+  const phone = (form.elements["customerPhone"]?.value || document.getElementById("customerPhone")?.value || "").trim();
+  const instagram = (form.elements["customerInstagram"]?.value || document.getElementById("customerInstagram")?.value || "").trim() || "Not provided";
+  const facebook = (form.elements["customerFacebook"]?.value || document.getElementById("customerFacebook")?.value || "").trim() || "Not provided";
+  const notes = (form.elements["customizationNotes"]?.value || document.getElementById("customizationNotes")?.value || "").trim() || "No special requests provided";
 
   // Check required contact via either Facebook or Instagram
   const checkFb = document.getElementById("contact-check-fb");
@@ -642,14 +642,17 @@ export async function handleOrderSubmit(event) {
   const loadingText = stepLoading.querySelector("p");
   if (loadingText) loadingText.textContent = "Sealing your order with love...";
 
-  // Prepare order payload
+  // Prepare order payload (includes aliases so EmailJS templates match regardless of naming)
   const orderPayload = {
     order_id: orderId,
     customer_name: name,
     customer_email: email,
     customer_phone: phone,
+    customer_instagram: instagram,
     instagram: instagram,
+    customer_facebook: facebook,
     facebook: facebook,
+    contact_methods: [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
     contact_verified: [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
     custom_notes: notes,
     product_name: pendingOrderItems[0]?.name || "Romantic Creation",
