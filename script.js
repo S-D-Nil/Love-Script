@@ -230,14 +230,14 @@ export function updateCartBadge() {
    4. Theme Management (Light/Dark with localStorage)
    ========================================================================== */
 export function initTheme() {
-  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "light";
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "dark";
   document.documentElement.setAttribute("data-theme", savedTheme);
   updateThemeToggleButtons(savedTheme);
 }
 
 export function toggleTheme() {
-  const current = document.documentElement.getAttribute("data-theme") || "light";
-  const newTheme = current === "light" ? "dark" : "light";
+  const current = document.documentElement.getAttribute("data-theme") || "dark";
+  const newTheme = current === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem(THEME_STORAGE_KEY, newTheme);
   updateThemeToggleButtons(newTheme);
@@ -1097,24 +1097,11 @@ export async function handleContactSubmit(event) {
    11. Toast Notifications Utility
    ========================================================================== */
 export function showToast(message) {
-  let toast = document.getElementById("app-toast");
-  if (!toast) {
-    toast = document.createElement("div");
-    toast.id = "app-toast";
-    toast.className = "toast-notification";
-    document.body.appendChild(toast);
+  // div#app-toast removed per user request
+  const toast = document.getElementById("app-toast");
+  if (toast) {
+    toast.remove();
   }
-
-  toast.innerHTML = `
-    <span class="toast-icon-wrap">💝</span>
-    <span>${message}</span>
-  `;
-
-  toast.classList.add("active");
-  clearTimeout(toast._timeout);
-  toast._timeout = setTimeout(() => {
-    toast.classList.remove("active");
-  }, 3800);
 }
 
 /* ==========================================================================
@@ -1305,6 +1292,8 @@ export function initScrollReveal() {
    14. Global Initialization on DOM Ready
    ========================================================================== */
 export function initApp() {
+  const existingToast = document.getElementById("app-toast");
+  if (existingToast) existingToast.remove();
   initTheme();
   updateCartBadge();
   filterProducts();
