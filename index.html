@@ -1047,8 +1047,13 @@
             <div class="browser-address-bar">
               <span>🔒</span> <span id="preview-address-url">https://lovescript.store/live/ls001</span>
             </div>
-            <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 700;">
-              LIVE DEMO
+            <div class="preview-mode-switch" style="display: flex; align-items: center; gap: 4px; background: var(--bg-secondary); padding: 3px; border-radius: var(--radius-full); border: 1px solid var(--accent-border);">
+              <button type="button" id="preview-tab-interactive" class="preview-mode-btn active" style="padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s ease; background: var(--primary-rose); color: #fff;">
+                ✨ Interactive
+              </button>
+              <button type="button" id="preview-tab-video" class="preview-mode-btn" style="padding: 4px 12px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s ease; background: transparent; color: var(--text-muted);">
+                🎬 Video Preview
+              </button>
             </div>
           </div>
 

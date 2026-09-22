@@ -49,6 +49,7 @@ export const products = [
     price: 49,
     priceFormatted: "$49",
     image: "/assets/products/birthday-love.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-birthday-cake-with-burning-candles-42588-large.mp4",
     description: "A personalized animated birthday website with cute mascot character, background music, balloon pop surprises, date badge, and floating hearts.",
     badge: "Best Seller",
     rating: 4.9,
@@ -64,6 +65,7 @@ export const products = [
     price: 39,
     priceFormatted: "$39",
     image: "/assets/products/do-you-love-me.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-holding-hands-and-walking-42358-large.mp4",
     description: "The viral interactive proposal website! Features an unclickable runaway 'No' button, sweet kitten mascot, and explosive heart confetti on 'Yes'.",
     badge: "Viral Hit",
     rating: 5.0,
@@ -79,6 +81,7 @@ export const products = [
     price: 59,
     priceFormatted: "$59",
     image: "/assets/products/eternal-journey.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-couple-walking-hand-in-hand-on-the-beach-at-sunset-41484-large.mp4",
     description: "Interactive romantic relationship milestone timeline. Displays polaroid memory cards, live days-together counter, and clickable love letters.",
     badge: "Most Romantic",
     rating: 4.9,
@@ -94,6 +97,7 @@ export const products = [
     price: 45,
     priceFormatted: "$45",
     image: "/assets/products/starry-night.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-starry-night-sky-with-a-shooting-star-43093-large.mp4",
     description: "A celestial love confession experience. Interactive constellation that traces your initials, typewriter audio effect, and ambient twilight melody.",
     badge: "Editor's Pick",
     rating: 4.8,
@@ -109,6 +113,7 @@ export const products = [
     price: 35,
     priceFormatted: "$35",
     image: "/assets/products/secret-garden.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-delicate-red-rose-in-the-garden-42618-large.mp4",
     description: "An interactive blooming flower garden. Clicking individual rose petals unfolds heartfelt personalized compliments and secret romantic promises.",
     badge: "Valentine Special",
     rating: 4.9,
@@ -124,6 +129,7 @@ export const products = [
     price: 49,
     priceFormatted: "$49",
     image: "/assets/products/midnight-surprise.svg",
+    video: "https://assets.mixkit.co/videos/preview/mixkit-birthday-celebration-with-sparklers-and-cake-42589-large.mp4",
     description: "Midnight surprise countdown timer with virtual cake cutting, blowable candle flames, celebratory fireworks, and personalized audio message.",
     badge: "New Release",
     rating: 4.9,
@@ -741,26 +747,39 @@ export async function handleOrderSubmit(event) {
 }
 
 /* ==========================================================================
-   9. Interactive Live Product Preview Engine
+   9. Interactive Live Product Preview Engine & Video Preview
    ========================================================================== */
-export function openPreviewModal(productId) {
+let currentPreviewProduct = null;
+let currentPreviewMode = "interactive"; // 'interactive' or 'video'
+
+export function openPreviewModal(productId, initialMode = "video") {
   const p = products.find(prod => prod.id === productId);
   if (!p) return;
+
+  currentPreviewProduct = p;
+  currentPreviewMode = initialMode;
 
   const modal = document.getElementById("preview-modal");
   const titleEl = document.getElementById("preview-product-name");
   const urlBar = document.getElementById("preview-address-url");
   const viewport = document.getElementById("preview-viewport");
   const openTabBtn = document.getElementById("preview-open-tab-btn");
+  const tabInteractive = document.getElementById("preview-tab-interactive");
+  const tabVideo = document.getElementById("preview-tab-video");
 
   if (!modal || !viewport) return;
 
   if (titleEl) titleEl.textContent = p.name;
   if (urlBar) urlBar.textContent = `https://lovescript.store/live/${p.id.toLowerCase()}`;
-  
-  // Render Interactive Demo
-  viewport.innerHTML = getInteractiveDemoHtml(p);
-  attachDemoInteractions(p.demoType, viewport);
+
+  // Configure switch buttons
+  if (tabInteractive && tabVideo) {
+    tabInteractive.onclick = () => switchPreviewMode("interactive");
+    tabVideo.onclick = () => switchPreviewMode("video");
+  }
+
+  // Render current mode
+  renderActivePreviewMode();
 
   if (openTabBtn) {
     openTabBtn.onclick = () => openStandaloneDemoTab(p);
@@ -770,9 +789,85 @@ export function openPreviewModal(productId) {
   document.body.style.overflow = "hidden";
 }
 
+function switchPreviewMode(mode) {
+  currentPreviewMode = mode;
+  renderActivePreviewMode();
+}
+
+function renderActivePreviewMode() {
+  if (!currentPreviewProduct) return;
+  const p = currentPreviewProduct;
+  const viewport = document.getElementById("preview-viewport");
+  const tabInteractive = document.getElementById("preview-tab-interactive");
+  const tabVideo = document.getElementById("preview-tab-video");
+  const urlBar = document.getElementById("preview-address-url");
+
+  if (!viewport) return;
+
+  if (currentPreviewMode === "video") {
+    // Video Preview Mode
+    if (tabVideo) tabVideo.classList.add("active");
+    if (tabInteractive) tabInteractive.classList.remove("active");
+    if (urlBar) urlBar.textContent = `https://lovescript.store/videos/${p.id.toLowerCase()}.mp4`;
+
+    viewport.innerHTML = getVideoPreviewHtml(p);
+    attachVideoInteractions(viewport, p);
+  } else {
+    // Interactive Simulation Mode
+    if (tabInteractive) tabInteractive.classList.add("active");
+    if (tabVideo) tabVideo.classList.remove("active");
+    if (urlBar) urlBar.textContent = `https://lovescript.store/live/${p.id.toLowerCase()}`;
+
+    viewport.innerHTML = getInteractiveDemoHtml(p);
+    attachDemoInteractions(p.demoType, viewport);
+  }
+}
+
+function getVideoPreviewHtml(product) {
+  const videoSrc = product.video || "https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-holding-hands-and-walking-42358-large.mp4";
+  return `
+    <div class="preview-video-container">
+      <div class="preview-video-overlay-info">
+        <span>🎬</span>
+        <span>${product.name} — Video Walkthrough</span>
+        <span style="background: rgba(244,63,94,0.9); padding: 2px 8px; border-radius: 999px; font-size: 0.72rem;">HD PREVIEW</span>
+      </div>
+
+      <video 
+        class="preview-video-element" 
+        controls 
+        autoplay 
+        playsinline
+        muted
+        loop
+        poster="${product.image}"
+        id="preview-html5-video"
+      >
+        <source src="${videoSrc}" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+  `;
+}
+
+function attachVideoInteractions(container, product) {
+  const videoEl = container.querySelector("#preview-html5-video");
+  if (videoEl) {
+    // Try to unmute on user interaction or display clear indicator
+    videoEl.addEventListener("play", () => {
+      console.log("Video playing for:", product.name);
+    });
+  }
+}
+
 export function closePreviewModal() {
   const modal = document.getElementById("preview-modal");
   if (modal) {
+    // Pause any playing preview video
+    const videoEl = modal.querySelector("#preview-html5-video");
+    if (videoEl) {
+      videoEl.pause();
+    }
     modal.classList.remove("active");
     document.body.style.overflow = "auto";
   }
