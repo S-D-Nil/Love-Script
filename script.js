@@ -28,8 +28,13 @@ export const CONFIG = {
   formSubmitEmail: "lovescript.com@gmail.com",
 
   // Social Contact Direct Links
-  facebookMessengerUrl: "https://m.me/lovescript",
-  instagramUrl: "https://instagram.com/lovescript.store",
+  // Facebook Page & Messenger:
+  facebookPageUrl: "https://www.facebook.com/profile.php?id=61594884230500&mibextid=ZbWKwL",
+  facebookMessengerUrl: "https://m.me/61594884230500",
+  // Instagram Profile & Direct Message (@love_script.io):
+  instagramUsername: "love_script.io",
+  instagramUrl: "https://www.instagram.com/love_script.io/",
+  instagramDmUrl: "https://ig.me/m/love_script.io",
   whatsappUrl: "https://wa.me/1234567890?text=Hello%20Love%20Script,%20I%20would%20like%20to%20order%20a%20custom%20romantic%20website!"
 };
 
@@ -604,7 +609,11 @@ export async function handleOrderSubmit(event) {
   const name = (form.elements["customerName"]?.value || document.getElementById("customerName")?.value || "").trim();
   const email = (form.elements["customerEmail"]?.value || document.getElementById("customerEmail")?.value || "").trim();
   const phone = (form.elements["customerPhone"]?.value || document.getElementById("customerPhone")?.value || "").trim();
-  const instagram = (form.elements["customerInstagram"]?.value || document.getElementById("customerInstagram")?.value || "").trim() || "Not provided";
+  let rawInstagram = (form.elements["customerInstagram"]?.value || document.getElementById("customerInstagram")?.value || "").trim();
+  if (rawInstagram.startsWith("@")) {
+    rawInstagram = rawInstagram.substring(1).trim();
+  }
+  const instagram = rawInstagram || "Not provided";
   const facebook = (form.elements["customerFacebook"]?.value || document.getElementById("customerFacebook")?.value || "").trim() || "Not provided";
   const notes = (form.elements["customizationNotes"]?.value || document.getElementById("customizationNotes")?.value || "").trim() || "No special requests provided";
 
@@ -1494,6 +1503,7 @@ export function initApp() {
     fbBtn.addEventListener("click", () => {
       if (checkFbEl) checkFbEl.checked = true;
       clearSocialContactError();
+      // Opens direct Facebook Messenger conversation with your page (falls back to page if messenger blocked)
       window.open(CONFIG.facebookMessengerUrl, "_blank", "noopener,noreferrer");
     });
   }
@@ -1502,7 +1512,8 @@ export function initApp() {
     igBtn.addEventListener("click", () => {
       if (checkIgEl) checkIgEl.checked = true;
       clearSocialContactError();
-      window.open(CONFIG.instagramUrl, "_blank", "noopener,noreferrer");
+      // Direct Instagram DM link (https://ig.me/m/love_script.io opens Instagram app/web DM directly)
+      window.open(CONFIG.instagramDmUrl, "_blank", "noopener,noreferrer");
     });
   }
 }
