@@ -25,7 +25,7 @@ export const CONFIG = {
 
   // FormSubmit Fallback (https://formsubmit.co/)
   // Replace with your email to receive form submissions via FormSubmit
-  formSubmitEmail: "gamersclub3232@gmail.com",
+  formSubmitEmail: "lovescript.com@gmail.com",
 
   // Social Contact Direct Links
   facebookMessengerUrl: "https://m.me/lovescript",
@@ -643,6 +643,11 @@ export async function handleOrderSubmit(event) {
   if (loadingText) loadingText.textContent = "Sealing your order with love...";
 
   // Prepare order payload (includes aliases so EmailJS templates match regardless of naming)
+  const originUrl = window.location.origin || "https://lovescript.store";
+  const primaryItem = pendingOrderItems[0];
+  const primaryImageAbs = primaryItem?.image ? (primaryItem.image.startsWith("http") ? primaryItem.image : `${originUrl}${primaryItem.image}`) : "";
+  const allImagesList = pendingOrderItems.map(p => `${p.name}: ${p.image.startsWith("http") ? p.image : `${originUrl}${p.image}`}`).join("\n");
+
   const orderPayload = {
     order_id: orderId,
     customer_name: name,
@@ -655,9 +660,10 @@ export async function handleOrderSubmit(event) {
     contact_methods: [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
     contact_verified: [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
     custom_notes: notes,
-    product_name: pendingOrderItems[0]?.name || "Romantic Creation",
-    product_id: pendingOrderItems[0]?.id || "LS000",
-    product_image: pendingOrderItems[0]?.image || "",
+    product_name: primaryItem?.name || "Romantic Creation",
+    product_id: primaryItem?.id || "LS000",
+    product_image: primaryImageAbs,
+    all_product_images: allImagesList,
     quantity: pendingOrderItems.reduce((acc, i) => acc + i.quantity, 0),
     total_price: `$${totalAmount}`,
     products_list: productsSummary,
@@ -678,8 +684,8 @@ export async function handleOrderSubmit(event) {
     }
   }
 
-  // FormSubmit Fallback submission
-  if (!sentViaEmailJS && CONFIG.formSubmitEmail) {
+  // FormSubmit Fallback / Parallel submission
+  if ((!sentViaEmailJS || CONFIG.formSubmitEmail) && CONFIG.formSubmitEmail) {
     try {
       await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONFIG.formSubmitEmail)}`, {
         method: "POST",
@@ -689,10 +695,24 @@ export async function handleOrderSubmit(event) {
         },
         body: JSON.stringify({
           _subject: `New Romantic Order: ${orderId} - ${name}`,
-          ...orderPayload
+          _template: "table",
+          _captcha: "false",
+          "Order ID": orderId,
+          "Customer Name": name,
+          "Customer Email": email,
+          "Customer Phone": phone,
+          "Instagram Handle": instagram,
+          "Facebook Profile": facebook,
+          "Contacted Via": [isFbContacted ? "Facebook" : "", isIgContacted ? "Instagram" : ""].filter(Boolean).join(" & "),
+          "Special Requests": notes,
+          "Products Ordered": productsSummary,
+          "Product Image Link": primaryImageAbs,
+          "All Product Image Links": allImagesList,
+          "Total Price": `$${totalAmount}`,
+          "Order Date": new Date().toLocaleString()
         })
       });
-      console.log("Order email sent via FormSubmit fallback");
+      console.log("Order email sent via FormSubmit successfully");
     } catch (err) {
       console.log("FormSubmit network request completed or handled:", err);
     }
@@ -1067,13 +1087,22 @@ export async function handleContactSubmit(event) {
     }
   }
 
-  // FormSubmit fallback
-  if (!sent && CONFIG.formSubmitEmail) {
+  // FormSubmit fallback / parallel
+  if ((!sent || CONFIG.formSubmitEmail) && CONFIG.formSubmitEmail) {
     try {
       await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(CONFIG.formSubmitEmail)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify({ _subject: `Contact Inquiry: ${subject}`, ...payload })
+        body: JSON.stringify({
+          _subject: `Contact Inquiry: ${subject} - ${name}`,
+          _template: "table",
+          _captcha: "false",
+          "Sender Name": name,
+          "Sender Email": email,
+          "Subject": subject,
+          "Message": message,
+          "Sent At": new Date().toLocaleString()
+        })
       });
       sent = true;
     } catch (err) {
