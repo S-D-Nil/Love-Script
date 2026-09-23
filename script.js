@@ -49,7 +49,7 @@ export const products = [
     price: 49,
     priceFormatted: "$49",
     image: "/assets/products/birthday-love.svg",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-birthday-cake-with-burning-candles-42588-large.mp4",
+    video: "https://www.youtube.com/watch?v=V_GQbEqU9FY",
     description: "A personalized animated birthday website with cute mascot character, background music, balloon pop surprises, date badge, and floating hearts.",
     badge: "Best Seller",
     rating: 4.9,
@@ -105,38 +105,6 @@ export const products = [
     features: ["Constellation Starfield", "Typewriter Effect", "Soft Audio Track", "Wax Stamp Seal"],
     previewUrl: "#demo-LS004",
     demoType: "stars"
-  },
-  {
-    id: "LS005",
-    name: "Be My Valentine Rose Garden",
-    category: "Valentine",
-    price: 35,
-    priceFormatted: "$35",
-    image: "/assets/products/secret-garden.svg",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-close-up-of-a-delicate-red-rose-in-the-garden-42618-large.mp4",
-    description: "An interactive blooming flower garden. Clicking individual rose petals unfolds heartfelt personalized compliments and secret romantic promises.",
-    badge: "Valentine Special",
-    rating: 4.9,
-    reviewsCount: 122,
-    features: ["Interactive Blooming Rose", "Petal Love Notes", "Fluttering Butterflies", "Ambient Garden Sounds"],
-    previewUrl: "#demo-LS005",
-    demoType: "garden"
-  },
-  {
-    id: "LS006",
-    name: "Midnight Birthday Countdown",
-    category: "Celebration",
-    price: 49,
-    priceFormatted: "$49",
-    image: "/assets/products/midnight-surprise.svg",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-birthday-celebration-with-sparklers-and-cake-42589-large.mp4",
-    description: "Midnight surprise countdown timer with virtual cake cutting, blowable candle flames, celebratory fireworks, and personalized audio message.",
-    badge: "New Release",
-    rating: 4.9,
-    reviewsCount: 84,
-    features: ["Midnight Timer", "Virtual Cake & Candles", "Fireworks Simulation", "Personal Voice Note"],
-    previewUrl: "#demo-LS006",
-    demoType: "countdown"
   }
 ];
 
@@ -808,7 +776,10 @@ function renderActivePreviewMode() {
     // Video Preview Mode
     if (tabVideo) tabVideo.classList.add("active");
     if (tabInteractive) tabInteractive.classList.remove("active");
-    if (urlBar) urlBar.textContent = `https://lovescript.store/videos/${p.id.toLowerCase()}.mp4`;
+    const ytId = extractYouTubeId(p.video);
+    if (urlBar) {
+      urlBar.textContent = ytId ? `https://youtube.com/watch?v=${ytId}` : `https://lovescript.store/videos/${p.id.toLowerCase()}.mp4`;
+    }
 
     viewport.innerHTML = getVideoPreviewHtml(p);
     attachVideoInteractions(viewport, p);
@@ -823,8 +794,41 @@ function renderActivePreviewMode() {
   }
 }
 
+function extractYouTubeId(url) {
+  if (!url) return null;
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+
 function getVideoPreviewHtml(product) {
   const videoSrc = product.video || "https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-holding-hands-and-walking-42358-large.mp4";
+  const ytId = extractYouTubeId(videoSrc);
+
+  if (ytId) {
+    // YouTube embed player with autoplay and controls
+    return `
+      <div class="preview-video-container" style="position:relative; width:100%; height:100%; min-height:480px; background:#000;">
+        <div class="preview-video-overlay-info">
+          <span>🎬</span>
+          <span>${product.name} — Video Walkthrough</span>
+          <span style="background: rgba(244,63,94,0.9); padding: 2px 8px; border-radius: 999px; font-size: 0.72rem;">HD PREVIEW</span>
+        </div>
+
+        <iframe 
+          id="preview-youtube-iframe"
+          class="preview-video-element"
+          src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1" 
+          title="${product.name} Video Preview" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+          style="width: 100%; height: 100%; border: none; min-height: 480px;"
+        ></iframe>
+      </div>
+    `;
+  }
+
   return `
     <div class="preview-video-container">
       <div class="preview-video-overlay-info">
@@ -853,7 +857,6 @@ function getVideoPreviewHtml(product) {
 function attachVideoInteractions(container, product) {
   const videoEl = container.querySelector("#preview-html5-video");
   if (videoEl) {
-    // Try to unmute on user interaction or display clear indicator
     videoEl.addEventListener("play", () => {
       console.log("Video playing for:", product.name);
     });
@@ -867,6 +870,11 @@ export function closePreviewModal() {
     const videoEl = modal.querySelector("#preview-html5-video");
     if (videoEl) {
       videoEl.pause();
+    }
+    // Stop YouTube iframe audio/video
+    const ytIframe = modal.querySelector("#preview-youtube-iframe");
+    if (ytIframe) {
+      ytIframe.src = "";
     }
     modal.classList.remove("active");
     document.body.style.overflow = "auto";
