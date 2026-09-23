@@ -65,7 +65,7 @@ export const products = [
     price: 39,
     priceFormatted: "$39",
     image: "/assets/products/do-you-love-me.svg",
-    video: "https://assets.mixkit.co/videos/preview/mixkit-couple-in-love-holding-hands-and-walking-42358-large.mp4",
+    video: "https://www.youtube.com/watch?v=NJnDwPkqscs",
     description: "The viral interactive proposal website! Features an unclickable runaway 'No' button, sweet kitten mascot, and explosive heart confetti on 'Yes'.",
     badge: "Viral Hit",
     rating: 5.0,
