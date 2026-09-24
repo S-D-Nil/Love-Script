@@ -1515,11 +1515,11 @@ header#main-navbar > div:nth-of-type(1) > nav:nth-of-type(1) > a.active,
   background: var(--bg-card);
   border: 1px solid var(--accent-border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 28px;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -1533,13 +1533,19 @@ header#main-navbar > div:nth-of-type(1) > nav:nth-of-type(1) > a.active,
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--accent-border);
+  background: var(--bg-secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-couple-art {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  max-height: 260px;
-  object-fit: cover;
+  height: auto;
+  min-height: 340px;
+  max-height: 440px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   object-position: center center;
   display: block;
   transition: transform var(--transition-smooth);
