@@ -809,12 +809,6 @@ function getVideoPreviewHtml(product) {
     // YouTube embed player with autoplay and controls
     return `
       <div class="preview-video-container" style="position:relative; width:100%; height:100%; min-height:480px; background:#000;">
-        <div class="preview-video-overlay-info">
-          <span>🎬</span>
-          <span>${product.name} — Video Walkthrough</span>
-          <span style="background: rgba(244,63,94,0.9); padding: 2px 8px; border-radius: 999px; font-size: 0.72rem;">HD PREVIEW</span>
-        </div>
-
         <iframe 
           id="preview-youtube-iframe"
           class="preview-video-element"
@@ -831,12 +825,6 @@ function getVideoPreviewHtml(product) {
 
   return `
     <div class="preview-video-container">
-      <div class="preview-video-overlay-info">
-        <span>🎬</span>
-        <span>${product.name} — Video Walkthrough</span>
-        <span style="background: rgba(244,63,94,0.9); padding: 2px 8px; border-radius: 999px; font-size: 0.72rem;">HD PREVIEW</span>
-      </div>
-
       <video 
         class="preview-video-element" 
         controls 
